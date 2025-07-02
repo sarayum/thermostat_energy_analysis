@@ -1,0 +1,14 @@
+python==3.10+
+
+pandas==2.2.3
+
+numpy==1.24.0
+
+matplotlib==3.6.1
+
+seaborn==0.12.1
+
+jupyter==1.0.0
+
+SQLite==3+
+
