@@ -15,3 +15,6 @@ __pycache__/
 ._*
 .DS_Store
 ._requirements.txt
+
+#ignore local folder uncleaned_thermostat_data/
+uncleaned_thermostat_data/
