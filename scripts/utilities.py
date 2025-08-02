@@ -62,3 +62,23 @@ def profile_dataframe_overview(df: pd.DataFrame, preview_rows: int = 5, include_
 def summary_stats(df: pd.DataFrame) -> pd.DataFrame:
     print("\n Summary Statistics:")
     return df.describe().T.round(2)
+
+# Categorical Analysis
+
+def value_counts_all_categoricals(df: pd.DataFrame, top_n: int = 5):
+    cat_cols = df.select_dtypes(include=['object', 'category']).columns
+    for col in cat_cols:
+        print(f"\n Top {top_n} values in '{col}':")
+        print(df[col].value_counts().head(top_n))
+
+# Column Health Checks
+
+def check_constant_columns(df: pd.DataFrame):
+    const_cols = [col for col in df.columns if df[col].nunique() == 1]
+    print("\n Constant Columns:", const_cols)
+    return const_cols
+
+def check_empty_columns(df: pd.DataFrame):
+    empty_cols = df.columns[df.isnull().all()].tolist()
+    print("\n Empty Columns:", empty_cols)
+    return empty_cols
