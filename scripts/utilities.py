@@ -1,7 +1,7 @@
 # coding: utf-8
 
 import pandas as pd
-import matplotlib.pyplot as plt
+
 
 # Utility functions for quick profiling and inspection of DataFrames
 
