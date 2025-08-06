@@ -28,33 +28,95 @@ To evaluate how indoor HVAC behavior correlates with outdoor weather and usage p
 
 Before running this project, ensure your development environment is ready:
 
-1. Install Visual Studio Code (VS Code)
+1. #### **Install Visual Studio Code (VS Code)**
 
 - Download and install VS Code from:
  👉 https://code.visualstudio.com/
 
-2. Install Python
+2. #### **Install Python**
 
 - Download and install Python (version 3.10+) from:
  👉 https://www.python.org/downloads/
 - During installation, check “Add Python to PATH” option.
 
-3. Install Python and Jupyter Extension in VS Code
+3. #### **Install Python and Jupyter Extension in VS Code**
+
 - Open VS Code → Go to Extensions (⇧⌘X / Ctrl+Shift+X)
+
 - Search for and install:
- - Python extension by Microsoft
- - Jupyter extension by Microsoft
+  - Python extension by Microsoft
+  - Jupyter extension by Microsoft
 
-4. Set up a Virtual Environment (Recommended)
-Run the following commands in the VS Code terminal:
+4. #### **Set up a Virtual Environment (Recommended)**
 
-#### Create virtual environment
-python -m venv venv
+   Run the following commands in the VS Code terminal:
 
-#### Activate the environment
+- ##### **Create virtual environment**
+  python -m venv venv
 
-##### Windows:
-venv\Scripts\activate
+- ##### **Activate the environment**
 
-##### macOS/Linux:
-source venv/bin/activate
+ - ##### **Windows:**
+     venv\Scripts\activate
+
+ - ##### **macOS/Linux:**
+     source venv/bin/activate
+
+5. #### **Install Required Python Packages**
+
+- If a requirements.txt file is available:
+
+    pip install -r requirements.txt
+
+- Or manually install commonly used libraries:
+
+    pip install pandas numpy matplotlib seaborn jupyter sqlite3
+
+6. #### **Launch Jupyter Notebook in VS Code**
+
+- Once setup is complete:
+
+  - Open your project folder in VS Code
+
+  - Open .ipynb files
+
+  - Select the appropriate Python interpreter (from virtual environment) in the top right corner
+
+  - Click “Run All” or use Shift + Enter to run cells
+
+
+### Project Directory Structure
+THERMOSTAT_ENERGY_ANALYSIS/
+│
+├── .venv/                           # Virtual environment (excluded from Git)
+├── data/
+│   ├── raw/                         # Original thermostat & weather data (CSV/JSON)
+│   └── processed/                   # Cleaned & transformed datasets for analysis
+│
+├── database/
+│   └── thermostat_analysis.db       # SQLite DB with processed weather & thermostat tables
+│
+├── docs/
+│   └── requirements.txt             # Python dependencies for reproducibility
+│
+├── notebooks/
+│   ├── clean_thermostat_data.ipynb              # Raw thermostat data cleaning
+│   ├── clean_weather_data.ipynb                 # Raw weather data cleaning
+│   ├── clean_thermostat_data_final.ipynb        # Finalized thermostat preprocessing
+│   ├── clean_weather_data_final.ipynb           # Finalized weather preprocessing
+│   ├── download_weather_data.ipynb              # Script to call Open-Meteo API
+│   ├── weather_json_to_csv.ipynb                # Converts JSON response to CSV
+│   ├── create_sql_db.ipynb                      # Creates DB and populates tables
+│   └── analysis.ipynb                           # Final analysis & visualization notebook
+│
+├── outputs/
+│   ├── charts/                     # Visualizations like boxplots, heatmaps, time series
+│   └── reports/                    # Summary insights and key observations (optional)
+│
+├── scripts/
+│   ├── raw_combined_file.py        # Combines uncleaned monthly thermostat CSVs
+│   └── utilities.py                # Reusable Python functions for EDA & preprocessing
+│
+├── uncleaned_thermostat_data/      # Original monthly thermostat CSVs before merging
+├── .gitignore                      # Prevents pushing `.db`, processed data, etc. to Git
+└── README.md                       # Project overview and execution instructions
