@@ -97,6 +97,7 @@ Before running this project, ensure your development environment is ready:
 - Select the appropriate Python interpreter (from virtual environment) in the top right corner
 
 - Execute Notebooks in Order
+
        Run the notebooks in the following sequence for a smooth pipeline:
 
        1. clean_thermostat_data_final.ipynb
@@ -163,3 +164,83 @@ THERMOSTAT_ENERGY_ANALYSIS/
 ├── .gitignore                      # Prevents pushing `.db`, processed data, etc. to Git
 └── README.md                       # Project overview and execution instructions
 </pre>
+
+## Dataset 1: Thermostat Data (thermostat_data_cleaned_final.csv)
+
+### Data Dictionary
+| Variable Name          | Data Type | Description                                                    |
+| ---------------------- | --------- | -------------------------------------------------------------- |
+| `timestamp`            | object    | Date and time of thermostat reading (recorded every 5 minutes) |
+| `system_setting`       | object    | HVAC setting preference (`cool` / `heat`)                      |
+| `system_mode`          | object    | Actual system status (e.g., `compressorcooloff`, `heat`)       |
+| `program_mode`         | object    | Program mode active at that time (`sleep`, `home`)             |
+| `cool_set_temp_f`      | float64   | Temperature set for cooling in Fahrenheit                      |
+| `heat_set_temp_f`      | float64   | Temperature set for heating in Fahrenheit                      |
+| `current_temp_f`       | float64   | Current indoor temperature in Fahrenheit                       |
+| `current_humidity_rh`  | float64   | Indoor relative humidity (%)                                   |
+| `outdoor_temp_f`       | float64   | Outdoor temperature in Fahrenheit                              |
+| `fan_sec`              | float64   | Fan runtime in seconds for the interval                        |
+| `date`                 | object    | Date part extracted from timestamp                             |
+| `hour`                 | int64     | Hour part of the timestamp                                     |
+| `minute`               | int64     | Minute part of the timestamp                                   |
+| `weekday`              | object    | Day of the week                                                |
+| `month`                | object    | Month name                                                     |
+| `fan_runtime_category` | object    | Categorized fan runtime (e.g., `Low`, `Medium`, `High`)        |
+
+### Data Summary
+
+- Total Records: 122,470
+
+- Date Range: May 1, 2024 – July 2025
+
+- Program Modes: home, sleep
+
+- Most Common System Setting: cool (71,779 records)
+
+- Fan Runtime (Seconds): Avg = 278s, Max = 300s
+
+- Indoor Temp: Min = 62.1°F, Max = 79.1°F, Avg = 71.45°F
+
+- Indoor Humidity: Min = 27%, Max = 73%, Avg = 52.26%
+
+### Data Source
+
+- Source: [Ecobee Smart Thermostat Data Export](https://www.ecobee.com/)
+
+- Collected From: User’s personal smart thermostat via CSV export
+
+- Collection Period: May 2024 – June 2025
+
+- License: Private dataset for academic use (Capstone Project)
+
+## Dataset 2: Weather Data (weather_data_cleaned_final.csv)
+
+### Data Dictionary
+| Variable Name      | Data Type | Description                                             |
+| ------------------ | --------- | ------------------------------------------------------- |
+| `timestamp`        | object    | Date and time of weather observation (hourly intervals) |
+| `outdoor_humidity` | int64     | Outdoor relative humidity (%)                           |
+| `wind_speed_kmh`   | float64   | Wind speed in kilometers per hour                       |
+| `outdoor_temp_f`   | float64   | Outdoor temperature in Fahrenheit                       |
+
+### Data Summary
+
+- Total Records: 10,224
+
+- Date Range: May 1, 2024 – June 30, 2025
+
+- Outdoor Temp: Min = -4.54°F, Max = 96.08°F, Avg = 57.18°F
+
+- Humidity: Min = 19%, Max = 100%, Avg = 70.88%
+
+- Wind Speed: Min = 0.0 km/h, Max = 55.7 km/h, Avg = 11.09 km/h
+
+### Data Source
+
+- Source: [Open-Meteo Historical Weather API](https://open-meteo.com/)
+
+- API Endpoint Used: Historical Hourly Forecast API
+
+- Location: Based on user’s ZIP code
+
+- License: Free for non-commercial use with attribution
