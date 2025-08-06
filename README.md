@@ -31,12 +31,15 @@ Before running this project, ensure your development environment is ready:
 1. #### **Install Visual Studio Code (VS Code)**
 
 - Download and install VS Code from:
- 👉 https://code.visualstudio.com/
+
+    👉 https://code.visualstudio.com/
 
 2. #### **Install Python**
 
 - Download and install Python (version 3.10+) from:
- 👉 https://www.python.org/downloads/
+
+    👉 https://www.python.org/downloads/
+
 - During installation, check “Add Python to PATH” option.
 
 3. #### **Install Python and Jupyter Extension in VS Code**
@@ -56,10 +59,10 @@ Before running this project, ensure your development environment is ready:
 
 - ##### **Activate the environment**
 
- - ##### **Windows:**
+    ##### **Windows:**
      venv\Scripts\activate
 
- - ##### **macOS/Linux:**
+    ##### **macOS/Linux:**
      source venv/bin/activate
 
 5. #### **Install Required Python Packages**
@@ -74,18 +77,57 @@ Before running this project, ensure your development environment is ready:
 
 6. #### **Launch Jupyter Notebook in VS Code**
 
-- Once setup is complete:
+    Once setup is complete:
 
-  - Open your project folder in VS Code
+- Clone the Repository 
 
-  - Open .ipynb files
+       Open your terminal or command prompt and run:
 
-  - Select the appropriate Python interpreter (from virtual environment) in the top right corner
+       git clone https://github.com/sarayum/thermostat_energy_analysis.git
+       cd thermostat_energy_analysis
 
-  - Click “Run All” or use Shift + Enter to run cells
+       This downloads the project files onto your computer.
+
+- Open the project folder in VS Code
+         
+       Open the workspace folder thermostat_energy_analysis
+
+- Open .ipynb files
+
+- Select the appropriate Python interpreter (from virtual environment) in the top right corner
+
+- Execute Notebooks in Order
+       Run the notebooks in the following sequence for a smooth pipeline:
+
+       1. clean_thermostat_data_final.ipynb
+
+          Cleans and preprocesses thermostat runtime data
+
+          Detects missing values, aggregates hourly data
+
+       2. clean_weather_data_final.ipynb
+
+          Cleans historical weather data and prepares it for merging
+
+          Standardizes format
+
+        3. create_sql_db.ipynb
+
+           Creates SQLite database
+
+           Inserts cleaned data into tables
+
+        4. analysis.ipynb
+
+           Performs exploratory data analysis
+
+           Visualizes relationships between indoor/outdoor factors and HVAC behavior
+
+           Draws insights and actionable conclusions
 
 
 ### Project Directory Structure
+<pre lang="md"> 
 THERMOSTAT_ENERGY_ANALYSIS/
 │
 ├── .venv/                           # Virtual environment (excluded from Git)
@@ -120,3 +162,4 @@ THERMOSTAT_ENERGY_ANALYSIS/
 ├── uncleaned_thermostat_data/      # Original monthly thermostat CSVs before merging
 ├── .gitignore                      # Prevents pushing `.db`, processed data, etc. to Git
 └── README.md                       # Project overview and execution instructions
+</pre>
