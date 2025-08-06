@@ -164,10 +164,8 @@ THERMOSTAT_ENERGY_ANALYSIS/
 │   └── requirements.txt             # Python dependencies for reproducibility
 │
 ├── notebooks/
-│   ├── clean_thermostat_data.ipynb              # Raw thermostat data cleaning
-│   ├── clean_weather_data.ipynb                 # Raw weather data cleaning
-│   ├── clean_thermostat_data_final.ipynb        # Finalized thermostat preprocessing
-│   ├── clean_weather_data_final.ipynb           # Finalized weather preprocessing
+│   ├── clean_thermostat_data_final.ipynb        # Finalized thermostat data
+│   ├── clean_weather_data_final.ipynb           # Finalized weather data
 │   ├── download_weather_data.ipynb              # Script to call Open-Meteo API
 │   ├── weather_json_to_csv.ipynb                # Converts JSON response to CSV
 │   ├── create_sql_db.ipynb                      # Creates DB and populates tables
