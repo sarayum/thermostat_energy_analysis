@@ -13,14 +13,35 @@ To evaluate how indoor HVAC behavior correlates with outdoor weather and usage p
 
 ## Technologies Used
 
-| Tool                       | Purpose                                      |
-| -------------------------- | -------------------------------------------- |
-| **Python (Pandas, NumPy)** | Data cleaning, transformation, aggregation   |
-| **Matplotlib / Seaborn**   | Visualization and plotting                   |
-| **SQLite3**                | Storing cleaned data for structured analysis |
-| **Jupyter Notebook**       | Interactive analysis and presentation        |
-| **Git & GitHub**           | Version control and project sharing          |
-| **VS Code**                | Code Editor                                  |
+### Python
+ The core programming language for this project, used for data manipulation, cleaning, visualization, and database interaction.
+
+### Jupyter Notebooks
+Used to document the entire data cleaning and analysis process in a step-by-step, interactive format
+
+### Pandas
+Used extensively for loading, cleaning, transforming, and analyzing data. It enabled tasks like missing value handling, resampling 5-minute data to hourly intervals, and merging datasets.
+
+### NumPy
+NumPy supported mathematical operations, particularly during preprocessing and aggregation.
+
+### Matplotlib & Seaborn
+Utilized to create informative visualizations, including line plots, boxplots, and time series graphs that revealed indoor-outdoor climate patterns and HVAC runtime behaviors.
+
+### SQLite (via sqlite3)
+Used to store the final processed thermostat and weather datasets in structured tables. It provided a lightweight database to query and manage cleaned data efficiently.
+
+### Requests
+Used to programmatically access the Open-Meteo Historical Weather API and download hourly weather data in JSON format.
+
+### ipykernel 
+Ensured Jupyter notebooks run smoothly within the selected Python environment.
+
+### Visual Studio Code (VS Code)
+The primary development environment, equipped with Python and Jupyter Notebook extensions to support interactive coding and markdown narration.
+
+### Git & GitHub
+Git was used for version control throughout the development process to track progress and manage changes efficiently. GitHub served as the central repository for hosting the project, enabling collaboration, backup, and easy sharing of the final deliverable.
 
 ## Project Setup Instructions
 
