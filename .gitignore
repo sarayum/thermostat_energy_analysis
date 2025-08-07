@@ -23,12 +23,14 @@ uncleaned_thermostat_data/
 
 data/processed/thermostat_data_cleaned.csv
 
-data/raw/dropped_thermostat_rows.csv
-
 data/processed/weather_data_cleaned.csv
+
+data/raw/dropped_thermostat_rows.csv
 
 notebooks/clean_thermostat_data.ipynb
 
 notebooks/clean_weather_data.ipynb
 
 database/
+
+data/processed/thermostat_hourly_simple.csv
