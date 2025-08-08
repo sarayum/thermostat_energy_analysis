@@ -172,8 +172,8 @@ THERMOSTAT_ENERGY_ANALYSIS/
 │   └── analysis.ipynb                           # Final analysis & visualization notebook
 │
 ├── outputs/
-│   ├── charts/                     # Visualizations like boxplots, heatmaps, time series
-│   └── reports/                    # Summary insights and key observations (optional)
+│   ├── charts/                     # Visualizations like line charts, bar charts
+│   └── reports/                    # Project Summary and Powerpoint Presentation
 │
 ├── scripts/
 │   ├── raw_combined_file.py        # Combines uncleaned monthly thermostat CSVs
